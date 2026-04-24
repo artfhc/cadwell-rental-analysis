@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decision Memo: 142-2 Cadwell Ct, San Jose CA 95138</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f172a;
+    --navy-light: #1e293b;
+    --navy-mid: #334155;
+    --amber: #f59e0b;
+    --amber-light: #fef3c7;
+    --amber-dark: #d97706;
+    --green: #10b981;
+    --green-light: #d1fae5;
+    --red: #ef4444;
+    --red-light: #fee2e2;
+    --orange: #f97316;
+    --orange-light: #ffedd5;
+    --blue: #3b82f6;
+    --blue-light: #dbeafe;
+    --slate: #64748b;
+    --slate-light: #f1f5f9;
+    --white: #ffffff;
+    --border: #e2e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+  }
+
+  /* ===== NAV ===== */
+  #top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  #top-nav::-webkit-scrollbar { display: none; }
+  #top-nav .nav-brand {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--amber);
+    white-space: nowrap;
+    padding: 1rem 1.5rem 1rem 0;
+    border-right: 1px solid var(--navy-mid);
+    margin-right: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  #top-nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 1rem 0.75rem;
+    white-space: nowrap;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+  #top-nav a:hover { color: var(--white); }
+  #top-nav a.active { color: var(--amber); border-bottom-color: var(--amber); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+    color: white;
+    padding: 3rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(239,68,68,0.15);
+    border: 1px solid rgba(239,68,68,0.4);
+    color: #fca5a5;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+  .hero-badge::before { content: '⚠'; font-size: 0.8rem; }
+  .hero h1 {
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 span { color: var(--amber); }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+  .print-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .print-btn:hover { background: rgba(255,255,255,0.2); }
+
+  /* ===== METRICS BAR ===== */
+  .metrics-bar {
+    background: var(--navy-light);
+    border-bottom: 1px solid var(--navy-mid);
+    padding: 1.25rem 2rem;
+  }
+  .metrics-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .metric-card {
+    background: var(--navy);
+    border: 1px solid var(--navy-mid);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .metric-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  .metric-icon.orange { background: rgba(249,115,22,0.15); }
+  .metric-icon.blue { background: rgba(59,130,246,0.15); }
+  .metric-icon.red { background: rgba(239,68,68,0.15); }
+  .metric-icon.amber { background: rgba(245,158,11,0.15); }
+  .metric-icon.green { background: rgba(16,185,129,0.15); }
+  .metric-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+    margin-bottom: 0.2rem;
+  }
+  .metric-value {
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .metric-value.red { color: var(--red); }
+  .metric-value.orange { color: var(--orange); }
+  .metric-value.amber { color: var(--amber); }
+  .metric-value.green { color: var(--green); }
+  .metric-value.blue { color: #60a5fa; }
+
+  /* ===== MAIN LAYOUT ===== */
+  .main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ===== SECTION ===== */
+  .section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 60px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-number {
+    background: var(--navy);
+    color: var(--amber);
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ===== CARD ===== */
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* ===== ALERT BANNERS ===== */
+  .alert {
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .alert-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+  .alert.red {
+    background: var(--red-light);
+    border: 1px solid #fca5a5;
+    color: #7f1d1d;
+  }
+  .alert.orange {
+    background: var(--orange-light);
+    border: 1px solid #fed7aa;
+    color: #7c2d12;
+  }
+  .alert strong { font-weight: 700; display: block; margin-bottom: 0.25rem; }
+
+  /* ===== EXEC SUMMARY ===== */
+  .exec-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .exec-bullets li {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .exec-bullets li.critical { border-left-color: var(--red); }
+  .exec-bullets li.good { border-left-color: var(--green); }
+  .exec-bullets li strong { color: var(--navy); }
+
+  /* ===== TABLES ===== */
+  .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; background: white; }
+  thead { background: var(--navy); color: white; }
+  thead th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:hover { background: var(--navy-mid); }
+  thead th .sort-arrow { margin-left: 0.3rem; opacity: 0.5; }
+  thead th.sort-asc .sort-arrow::after { content: ' ▲'; opacity: 1; }
+  thead th.sort-desc .sort-arrow::after { content: ' ▼'; opacity: 1; }
+  tbody tr { border-bottom: 1px solid var(--border); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--slate-light); }
+  tbody tr:hover { background: #e0f2fe; }
+  tbody tr.highlight-row { background: rgba(245,158,11,0.12) !important; }
+  tbody tr.highlight-row td { font-weight: 600; }
+  tbody td { padding: 0.7rem 1rem; color: #374151; vertical-align: top; }
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .badge.green { background: var(--green-light); color: #065f46; }
+  .badge.red { background: var(--red-light); color: #7f1d1d; }
+  .badge.orange { background: var(--orange-light); color: #7c2d12; }
+  .badge.amber { background: var(--amber-light); color: #78350f; }
+
+  /* ===== PRICING SELECTOR ===== */
+  .pricing-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .pricing-tab {
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    background: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .pricing-tab:hover { border-color: var(--navy-mid); }
+  .pricing-tab.active { border-color: var(--amber); background: var(--amber-light); color: var(--amber-dark); }
+  .pricing-tab.active.red-tab { border-color: var(--red); background: var(--red-light); color: #b91c1c; }
+  .pricing-tab.active.green-tab { border-color: var(--green); background: var(--green-light); color: #065f46; }
+
+  .scenario-display {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .scenario-headline { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .scenario-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .scenario-stat { text-align: center; }
+  .scenario-stat-label { font-size: 0.72rem; color: var(--slate); text-transform: uppercase; font-weight: 500; margin-bottom: 0.25rem; }
+  .scenario-stat-value { font-size: 1.4rem; font-weight: 800; }
+
+  /* Bar chart */
+  .bar-chart { display: flex; flex-direction: column; gap: 0.6rem; }
+  .bar-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.82rem; }
+  .bar-label { width: 200px; flex-shrink: 0; font-weight: 500; }
+  .bar-track { flex: 1; height: 28px; background: var(--slate-light); border-radius: 6px; overflow: hidden; position: relative; }
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+    transition: width 0.4s ease;
+  }
+  .bar-fill.active-bar { box-shadow: 0 0 0 2px var(--amber); }
+
+  /* ===== ROOT CAUSE CARDS ===== */
+  .cause-cards { display: flex; flex-direction: column; gap: 0.6rem; }
+  .cause-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+  }
+  .cause-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .cause-header:hover { background: var(--slate-light); }
+  .cause-num {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .cause-title { flex: 1; font-size: 0.9rem; font-weight: 600; }
+  .cause-chevron { font-size: 0.75rem; color: var(--slate); transition: transform 0.2s; }
+  .cause-card.open .cause-chevron { transform: rotate(180deg); }
+  .cause-body {
+    display: none;
+    padding: 0 1rem 1rem 3.1rem;
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.55;
+    border-top: 1px solid var(--border);
+  }
+  .cause-card.open .cause-body { display: block; }
+  .severity-critical { background: var(--red-light); color: #7f1d1d; }
+  .severity-high { background: var(--orange-light); color: #7c2d12; }
+  .severity-medium { background: var(--amber-light); color: #78350f; }
+
+  /* ===== TIMELINE / EXECUTION ===== */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .timeline-item { display: flex; gap: 1rem; position: relative; }
+  .timeline-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+  .timeline-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--navy-mid);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: white;
+  }
+  .timeline-dot.checked {
+    background: var(--green);
+    box-shadow: 0 0 0 2px var(--green);
+  }
+  .timeline-dot.checked::after { content: '✓'; font-size: 0.75rem; font-weight: 700; }
+  .timeline-line { width: 2px; flex: 1; background: var(--border); margin-top: 4px; }
+  .timeline-content {
+    flex: 1;
+    padding: 0 0 1.5rem 0;
+  }
+  .timeline-day {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--amber);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .timeline-action {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .timeline-gate {
+    font-size: 0.78rem;
+    color: var(--red);
+    font-weight: 500;
+    background: var(--red-light);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+
+  /* ===== DESCRIPTION TABS ===== */
+  .desc-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 2px solid var(--border); }
+  .desc-tab {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    font-family: 'Inter', sans-serif;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: var(--slate);
+    transition: all 0.2s;
+  }
+  .desc-tab.active { border-bottom-color: var(--amber); color: var(--navy); }
+  .desc-tab.red-tab.active { border-bottom-color: var(--red); color: var(--red); }
+  .desc-panel { display: none; margin-top: 1rem; }
+  .desc-panel.active { display: block; }
+
+  .old-desc {
+    background: #fefce8;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    position: relative;
+  }
+  .problem-list {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .problem-list li {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.84rem;
+    color: #7c2d12;
+    background: var(--red-light);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    align-items: flex-start;
+  }
+  .problem-list li::before { content: '✗'; font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+  .new-desc-wrap { position: relative; }
+  .new-desc {
+    background: var(--navy);
+    color: #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(245,158,11,0.2);
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover { background: var(--amber); color: var(--navy); }
+  .copy-btn.copied { background: var(--green); border-color: var(--green); color: white; }
+
+  /* ===== POSITIONING PILLARS ===== */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+  .pillar {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--green);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+  }
+  .pillar-num { font-size: 1.2rem; font-weight: 800; color: var(--green); margin-bottom: 0.2rem; }
+  .pillar-text { font-weight: 600; color: var(--navy); }
+
+  /* ===== FINANCIAL SUMMARY ===== */
+  .fin-table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); }
+  .fin-note {
+    background: var(--amber-light);
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    color: #78350f;
+  }
+  .fin-note p { margin-bottom: 0.3rem; }
+  .fin-note p:last-child { margin-bottom: 0; }
+
+  /* ===== FINAL REC ===== */
+  .rec-cards { display: flex; flex-direction: column; gap: 0.6rem; }
+  .rec-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--navy);
+    border-radius: 0 8px 8px 0;
+    padding: 0.9rem 1.1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+  .rec-card.urgent { border-left-color: var(--red); }
+  .rec-card.important { border-left-color: var(--amber); }
+  .rec-step {
+    background: var(--navy);
+    color: var(--amber);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-top: 0.1rem;
+  }
+  .bottom-line {
+    background: var(--navy);
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .bottom-line strong { color: var(--amber); }
+
+  /* ===== LEGAL FLAGS ===== */
+  .legal-card {
+    border: 1px solid #fca5a5;
+    background: #fff5f5;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .legal-card h4 { color: var(--red); font-size: 0.95rem; margin-bottom: 0.6rem; }
+  .legal-card ul { padding-left: 1.1rem; font-size: 0.875rem; color: #374151; }
+  .legal-card ul li { margin-bottom: 0.3rem; }
+
+  /* ===== MARKET CONDITIONS ===== */
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .market-stat {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+  }
+  .market-stat-label { font-size: 0.72rem; color: var(--slate); text-transform: uppercase; font-weight: 600; margin-bottom: 0.3rem; }
+  .market-stat-value { font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+  .market-stat-sub { font-size: 0.78rem; color: var(--slate); margin-top: 0.2rem; }
+
+  /* ===== TENANT TARGET ===== */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+  .target-card {
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    font-size: 0.875rem;
+  }
+  .target-card.yes { background: var(--green-light); border: 1px solid #6ee7b7; }
+  .target-card.no { background: var(--red-light); border: 1px solid #fca5a5; }
+  .target-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .target-card.yes h4 { color: #065f46; }
+  .target-card.no h4 { color: #7f1d1d; }
+  .target-card ul { padding-left: 1rem; }
+  .target-card ul li { margin-bottom: 0.25rem; }
+
+  /* ===== GENERIC TEXT BLOCKS ===== */
+  p { font-size: 0.9rem; color: #374151; line-height: 1.65; margin-bottom: 0.75rem; }
+  p:last-child { margin-bottom: 0; }
+  ul.styled-list { padding-left: 1.2rem; font-size: 0.875rem; }
+  ul.styled-list li { margin-bottom: 0.35rem; color: #374151; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    #top-nav, .print-btn { display: none; }
+    body { background: white; }
+    .section { break-inside: avoid; }
+    .hero { background: #0f172a !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .metrics-bar { background: #1e293b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cause-body { display: block !important; }
+    .desc-panel { display: block !important; }
+    .old-desc, .new-desc-wrap { display: block; }
+  }
+
+  @media (max-width: 768px) {
+    .bar-label { width: 120px; font-size: 0.75rem; }
+    .bar-fill { font-size: 0.7rem; }
+    .two-col { grid-template-columns: 1fr; }
+    .print-btn { top: 0.75rem; right: 0.75rem; font-size: 0.72rem; padding: 0.4rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav id="top-nav">
+  <span class="nav-brand">142-2 Cadwell Ct</span>
+  <a href="#s1">Summary</a>
+  <a href="#s2">Audit</a>
+  <a href="#s3">Comps</a>
+  <a href="#s4">Market</a>
+  <a href="#s5">Pricing</a>
+  <a href="#s6">Root Cause</a>
+  <a href="#s7">Targeting</a>
+  <a href="#s8">Listing</a>
+  <a href="#s9">Execution</a>
+  <a href="#s10">Legal</a>
+  <a href="#s11">Financials</a>
+  <a href="#s12">Recommendation</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+  <div class="hero-inner">
+    <div class="hero-badge">Action Required Within 48 Hours</div>
+    <h1>Decision Memo: <span>142-2 Cadwell Ct</span><br>San Jose, CA 95138</h1>
+    <div class="hero-meta">
+      <span>📅 April 23, 2026</span>
+      <span>🏠 3 BD / 2 BA · ~1,000 sqft ADU</span>
+      <span>📍 Santa Teresa / Blossom Valley</span>
+      <span>⚠ Vacant 34 Days</span>
+    </div>
+  </div>
+</header>
+
+<!-- METRICS BAR -->
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-card">
+      <div class="metric-icon orange">📅</div>
+      <div>
+        <div class="metric-label">Days Vacant</div>
+        <div class="metric-value orange">34</div>
+      </div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon blue">📬</div>
+      <div>
+        <div class="metric-label">Contacts</div>
+        <div class="metric-value blue">67</div>
+      </div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon red">📝</div>
+      <div>
+        <div class="metric-label">Leases Signed</div>
+        <div class="metric-value red">0</div>
+      </div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon red">💸</div>
+      <div>
+        <div class="metric-label">Money Lost</div>
+        <div class="metric-value red">$4,317</div>
+      </div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon green">🎯</div>
+      <div>
+        <div class="metric-label">Rec. Price</div>
+        <div class="metric-value green">$3,400</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+  <!-- SECTION 1: EXECUTIVE SUMMARY -->
+  <section id="s1" class="section">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2 class="section-title">Executive Summary</h2>
+    </div>
+    <ul class="exec-bullets">
+      <li class="critical"><strong>Overpriced by $300–$500/mo AND price history is working against you.</strong> The listing opened at $3,800, dropped to $3,700, then raised back to $3,800. That public yo-yo signals an indecisive landlord and is actively suppressing applications from serious tenants.</li>
+      <li><strong>67 contacts in 34 days with zero signed leases is a conversion crisis, not a visibility crisis.</strong> The listing is being seen. Something is breaking trust at the decision point — and this analysis identifies exactly what.</li>
+      <li class="critical"><strong>Critical listing error: "No garage, street parking only."</strong> The Zillow facts section says "Off Street Parking" but your description says "street parking only." This contradiction destroys trust with applicants who read the full listing. Fix this today.</li>
+      <li class="critical"><strong>School ratings are weaker than previously assumed.</strong> The served schools are Baldwin Elementary (7/10), Bernal Intermediate (6/10), and Oak Grove High (5/10) — not the top-rated Evergreen schools. Remove school-district marketing from the listing entirely; it will backfire with informed family tenants.</li>
+      <li class="critical"><strong>No A/C.</strong> "Central heat only" in a San Jose summer is a real objection that must be disclosed and mitigated, not buried.</li>
+      <li class="good"><strong>Recommended price: $3,400.</strong> Single clean cut, no further yo-yoing. At $3,400 leased within 2 weeks, you net more in Year 1 than holding $3,800 for another 6+ weeks.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 2: AUDIT -->
+  <section id="s2" class="section">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2 class="section-title">What the Live Listing Reveals (Audit)</h2>
+    </div>
+
+    <div class="alert orange">
+      <span class="alert-icon">⚠</span>
+      <div><strong>Parking Contradiction — Fix Today</strong>Zillow facts show "Off Street Parking" but the description says "No garage street parking only." Applicants who notice this assume they are being misled and move on.</div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="audit-table">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Current Value</th>
+            <th>Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Asking rent</td><td>$3,800/mo</td><td><span class="badge red">Overpriced</span></td></tr>
+          <tr><td>Security deposit</td><td>$3,800</td><td><span class="badge green">Standard — OK</span></td></tr>
+          <tr><td>Days on market</td><td>34 days</td><td><span class="badge red">Stale — deprioritized at 30+</span></td></tr>
+          <tr><td>Contacts received</td><td>67</td><td><span class="badge orange">High visibility, near-zero conversion</span></td></tr>
+          <tr><td>Price history</td><td>$3,800 → $3,700 → $3,800</td><td><span class="badge red">Worst signal — raised after cut</span></td></tr>
+          <tr><td>Application fee</td><td>$0</td><td><span class="badge green">Good — no friction</span></td></tr>
+          <tr><td>Pets</td><td>Cats, dogs OK</td><td><span class="badge green">Good — correctly disclosed</span></td></tr>
+          <tr><td>Laundry</td><td>WD hookups (description says "new washer and dryer")</td><td><span class="badge orange">Inconsistent — clarify</span></td></tr>
+          <tr><td>Parking</td><td>"Off Street" in facts; "street parking only" in desc</td><td><span class="badge red">Critical error — fix immediately</span></td></tr>
+          <tr><td>Cooling</td><td>None ("central heat only")</td><td><span class="badge orange">Significant deficiency for SJ summers</span></td></tr>
+          <tr><td>Schools (served)</td><td>Baldwin Elem 7/10, Bernal Int 6/10, Oak Grove 5/10</td><td><span class="badge red">Below average — do NOT market</span></td></tr>
+          <tr><td>Walk Score</td><td>12/100 (Car-Dependent)</td><td><span class="badge orange">Car-only location</span></td></tr>
+          <tr><td>Transit Score</td><td>31/100</td><td><span class="badge orange">Not transit-accessible</span></td></tr>
+          <tr><td>Listing headline</td><td>"Blossom Valley Brand New Home"</td><td><span class="badge amber">Acceptable but generic</span></td></tr>
+          <tr><td>Neighborhood</td><td>Listed as Santa Teresa on Zillow</td><td><span class="badge amber">Not Evergreen — different sub-area</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.75rem;color:var(--navy);">Current Description (verbatim)</h3>
+      <div class="old-desc">Brand new built ADU / 3 beds and 2 baths with 1,000 sf of living area / Single level located in a cul-de-sac / Laminate floor throughout / LED ceiling lights / Large concrete patio with a private yard / Central heat only / New refrigerator, washer and dryer / Conveniently locate to work and shopping / No garage street parking only</div>
+      <ul class="problem-list" style="margin-top:1rem;">
+        <li>Leads with "ADU" — triggers shared-wall anxiety before any benefit is communicated</li>
+        <li>"No garage street parking only" contradicts Zillow's "Off Street Parking" field — applicants notice and assume they're being misled</li>
+        <li>No mention of standalone structure, private entrance, or separation from main house</li>
+        <li>"Conveniently locate to work and shopping" — vague filler with a grammatical error</li>
+        <li>Mentions "washer and dryer" but Facts section says "WD Hookup" — applicants don't know if appliances are included</li>
+        <li>No mention of square footage of patio/yard — "large" is meaningless without scale</li>
+        <li>No utilities disclosure in the headline copy (buried in fine print)</li>
+        <li>Zero urgency or call to action</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 3: COMPS -->
+  <section id="s3" class="section">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2 class="section-title">Comparable Listings</h2>
+    </div>
+    <p>Click any column header to sort. The subject property row is highlighted.</p>
+    <div class="table-wrap">
+      <table id="comps-table">
+        <thead>
+          <tr>
+            <th data-col="0">Address <span class="sort-arrow"></span></th>
+            <th data-col="1">Zip <span class="sort-arrow"></span></th>
+            <th data-col="2">Bd/Ba <span class="sort-arrow"></span></th>
+            <th data-col="3" data-type="num">Sqft <span class="sort-arrow"></span></th>
+            <th data-col="4" data-type="num">Rent <span class="sort-arrow"></span></th>
+            <th data-col="5" data-type="num">$/Sqft <span class="sort-arrow"></span></th>
+            <th data-col="6">Notes <span class="sort-arrow"></span></th>
+          </tr>
+        </thead>
+        <tbody id="comps-body">
+          <tr><td>3215 Foxboro Pl</td><td>95135</td><td>3/2</td><td>2,009</td><td>$3,750</td><td>$1.87</td><td>2x your size, $50 less than your ask</td></tr>
+          <tr><td>118 Azucar Ave</td><td>95121</td><td>3/2</td><td>1,295</td><td>$3,880</td><td>$3.00</td><td>Full home, larger, similar price</td></tr>
+          <tr><td>3204 Janelle Dr</td><td>95148</td><td>3/2</td><td>1,327</td><td>$3,950</td><td>$2.98</td><td>Full home, 33% more space</td></tr>
+          <tr><td>699 Balfour Dr</td><td>95121</td><td>3/1.5</td><td>~1,200</td><td>$3,295</td><td>$2.75</td><td>Older, half-bath deficit</td></tr>
+          <tr><td>5525 Great Oaks Pkwy</td><td>95135</td><td>3/3.5</td><td>~1,500</td><td>$3,700–3,850</td><td>$2.47–2.57</td><td>50% larger at same price</td></tr>
+          <tr><td>2042 Terilyn Ave</td><td>95122</td><td>3/2</td><td>1,272</td><td>$3,695</td><td>$2.91</td><td>Remodeled SFR, larger</td></tr>
+          <tr class="highlight-row"><td>142-2 Cadwell Ct (YOU)</td><td>95138</td><td>3/2</td><td>~1,000</td><td>$3,800</td><td>$3.80</td><td>Smallest, highest $/sqft in set</td></tr>
+          <tr><td>95138 full SFHs</td><td>95138</td><td>3–4BR</td><td>1,400–1,800</td><td>$4,500–5,700</td><td>$2.70–3.20</td><td>Your perceived competition</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MARKET -->
+  <section id="s4" class="section">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2 class="section-title">Market Conditions</h2>
+    </div>
+    <div class="market-grid" style="margin-bottom:1.25rem;">
+      <div class="market-stat">
+        <div class="market-stat-label">SJ Vacancy Rate</div>
+        <div class="market-stat-value">4.8%</div>
+        <div class="market-stat-sub">Technically tight — irrelevant for overpriced listings</div>
+      </div>
+      <div class="market-stat">
+        <div class="market-stat-label">3BR Trend Citywide</div>
+        <div class="market-stat-value" style="color:var(--green);">+8% YoY</div>
+        <div class="market-stat-sub">Median 3BR SJ: $3,993–$4,203 (Zumper)</div>
+      </div>
+      <div class="market-stat">
+        <div class="market-stat-label">95138 / Santa Teresa</div>
+        <div class="market-stat-value" style="color:var(--red);">-6.5% YoY</div>
+        <div class="market-stat-sub">$4,598 → $4,299 in Evergreen submarket</div>
+      </div>
+      <div class="market-stat">
+        <div class="market-stat-label">WARN Notices (SC County)</div>
+        <div class="market-stat-value" style="color:var(--orange);">457</div>
+        <div class="market-stat-sub">26,107 workers affected over 24 months</div>
+      </div>
+    </div>
+    <div class="alert red">
+      <span class="alert-icon">⚠</span>
+      <div><strong>Softening Submarket + Peak Season Closing</strong>April is peak leasing season. 34 days with no lease in peak season is a property-specific problem. Post-August demand drops sharply. The window is closing. This unit sits in the softening Santa Teresa submarket (-6.5% YoY) — not the citywide +8% growth story. The $114K+ income tier required to qualify at $3,800 is exactly the layoff-exposed tech cohort being affected by local WARN notices.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: PRICING -->
+  <section id="s5" class="section">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2 class="section-title">Pricing Analysis</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:1.25rem;">
+      <p>Fair value for a 1,000 sqft ADU with no A/C, street-only parking, and below-average served schools is <strong>$3,200–$3,450</strong>. At $3.80/sqft your unit is the smallest and highest $/sqft property in the entire comparable set.</p>
+      <p style="margin-top:0.5rem;"><strong>Opportunity cost at $3,800:</strong> $127/day, or $887/week already burning. Already lost: 34 days × $127 = <strong style="color:var(--red);">$4,317 in lost rent</strong>.</p>
+    </div>
+
+    <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.75rem;color:var(--navy);">Select a scenario to see the impact:</h3>
+
+    <div class="pricing-tabs">
+      <button class="pricing-tab red-tab" data-scenario="0" onclick="selectScenario(0)">Hold $3,800</button>
+      <button class="pricing-tab" data-scenario="1" onclick="selectScenario(1)">Cut to $3,600</button>
+      <button class="pricing-tab active green-tab" data-scenario="2" onclick="selectScenario(2)">Cut to $3,400 (Recommended)</button>
+      <button class="pricing-tab" data-scenario="3" onclick="selectScenario(3)">Cut to $3,200</button>
+    </div>
+
+    <div class="scenario-display" id="scenario-display">
+      <div class="scenario-headline" id="scenario-headline">Cut to $3,400 — Recommended</div>
+      <div class="scenario-stats">
+        <div class="scenario-stat">
+          <div class="scenario-stat-label">Monthly Rent</div>
+          <div class="scenario-stat-value" id="sc-rent" style="color:var(--green);">$3,400</div>
+        </div>
+        <div class="scenario-stat">
+          <div class="scenario-stat-label">Est. Days to Lease</div>
+          <div class="scenario-stat-value" id="sc-days" style="color:var(--navy);">10–14 days</div>
+        </div>
+        <div class="scenario-stat">
+          <div class="scenario-stat-label">Year 1 Net Income</div>
+          <div class="scenario-stat-value" id="sc-net" style="color:var(--green);">$39,100</div>
+        </div>
+        <div class="scenario-stat">
+          <div class="scenario-stat-label">Total Lost Rent</div>
+          <div class="scenario-stat-value" id="sc-lost" style="color:var(--red);">$5,204</div>
+        </div>
+      </div>
+      <div id="scenario-note" style="font-size:0.85rem;color:#374151;margin-bottom:1.25rem;background:var(--slate-light);border-radius:6px;padding:0.75rem 1rem;"></div>
+    </div>
+
+    <div class="card">
+      <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:1rem;color:var(--navy);">Year 1 Net Income Comparison</h3>
+      <div class="bar-chart" id="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label" style="font-size:0.8rem;">Hold $3,800</div>
+          <div class="bar-track">
+            <div class="bar-fill" id="bar-0" style="width:48.6%;background:var(--red);">$19,000</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label" style="font-size:0.8rem;">Cut to $3,600</div>
+          <div class="bar-track">
+            <div class="bar-fill" id="bar-1" style="width:90.0%;background:var(--amber);">$35,200</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label" style="font-size:0.8rem;">Cut to $3,400 ✓</div>
+          <div class="bar-track">
+            <div class="bar-fill active-bar" id="bar-2" style="width:100%;background:var(--green);">$39,100</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label" style="font-size:0.8rem;">Cut to $3,200</div>
+          <div class="bar-track">
+            <div class="bar-fill" id="bar-3" style="width:86.0%;background:var(--blue);">$33,640</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ROOT CAUSE -->
+  <section id="s6" class="section">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2 class="section-title">Root Cause Diagnosis (Ranked)</h2>
+    </div>
+    <p style="margin-bottom:1rem;">Click each card to expand the detail. Ranked by severity and impact on conversion.</p>
+    <div class="cause-cards">
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">1</div>
+          <div class="cause-title">Price too high for the product</div>
+          <span class="badge red">Critical</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">$3.80/sqft for 1,000 sqft with no A/C, street parking only, and 5–7/10 schools. Every comparable in the market offers more space at a lower or equivalent price. No rational tenant with options will pay a premium for a smaller ADU.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">2</div>
+          <div class="cause-title">Public price yo-yo ($3,800 → $3,700 → $3,800)</div>
+          <span class="badge red">Critical</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">Serious tenants interpret a price increase after a cut as an unreliable or irrational landlord. This is the second-worst possible pricing signal. It actively discourages high-quality applicants who have multiple options and don't want to deal with landlord instability.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">3</div>
+          <div class="cause-title">Parking contradiction in the listing</div>
+          <span class="badge red">Critical</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">Zillow says "Off Street Parking" in the facts section. Your description says "No garage street parking only." Any applicant who reads both sections assumes they are being deceived and moves on immediately. This is a trust-destroying error that has likely cost you dozens of applications.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">4</div>
+          <div class="cause-title">Stale listing at 34 days</div>
+          <span class="badge orange">High</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">Zillow's algorithm actively deprioritizes listings past 30 days. You are being seen less and less each day. This requires a relist or meaningful price change to reset visibility. The $3,400 price cut combined with a full relisting on multiple platforms will reset this clock.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">5</div>
+          <div class="cause-title">ADU anxiety not addressed</div>
+          <span class="badge orange">High</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">The description leads with "Brand new built ADU" — this immediately triggers shared-wall anxiety and connotations of a garage conversion or basement unit. The description never clarifies that this is a standalone structure with a private entrance. Applicants who don't know any better assume the worst.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">6</div>
+          <div class="cause-title">No A/C not disclosed upfront</div>
+          <span class="badge orange">High</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">"Central heat only" is buried in the middle of the description. Tenants who discover the A/C absence after investing time in an application or showing feel deceived. Upfront disclosure converts this from a surprise objection into a manageable factor — especially if you offer a portable A/C unit as an amenity.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">7</div>
+          <div class="cause-title">Laundry ambiguity</div>
+          <span class="badge amber">Medium</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">The description says "new washer and dryer" but the Zillow facts section says "WD Hookup." Applicants don't know whether appliances are included. This ambiguity reduces conversion — applicants assume the less favorable interpretation (hookups only) and factor the cost of buying appliances into their decision.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">8</div>
+          <div class="cause-title">Vague, error-prone copy</div>
+          <span class="badge amber">Medium</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">A grammatical error ("Conveniently locate"), no nearby landmarks, no call to action, and filler phrases like "conveniently located to work and shopping" communicate a landlord who did not invest effort in this listing. Quality tenants notice this and question whether the landlord will be attentive if issues arise.</div>
+      </div>
+
+      <div class="cause-card" onclick="toggleCause(this)">
+        <div class="cause-header">
+          <div class="cause-num">9</div>
+          <div class="cause-title">No pre-screening filter</div>
+          <span class="badge amber">Medium</span>
+          <span class="cause-chevron">▼</span>
+        </div>
+        <div class="cause-body">67 contacts with no filter means tire-kickers are consuming showing slots. Adding a 3-question income/move-in pre-screen in the listing text will eliminate unqualified inquiries and allow you to identify and prioritize serious tenants immediately. This also signals professionalism to quality applicants.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 7: TENANT TARGETING -->
+  <section id="s7" class="section">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2 class="section-title">Tenant Targeting and Positioning</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:1rem;">
+      <p><strong>Who actually qualifies at $3,400</strong> (3x income = $10,200/mo = $122K/yr household)</p>
+    </div>
+
+    <div class="two-col" style="margin-bottom:1.25rem;">
+      <div class="target-card yes">
+        <h4>Qualified Tenants</h4>
+        <ul>
+          <li>Dual-income professional couple, one or both in tech/healthcare/finance</li>
+          <li>H-1B visa holders with employer verification letters</li>
+          <li>Relocating employees with corporate relocation packages</li>
+          <li>Small families (1–2 kids) with their own car(s)</li>
+        </ul>
+      </div>
+      <div class="target-card no">
+        <h4>Unlikely to Qualify or Fit</h4>
+        <ul>
+          <li>Single professionals earning under $100K</li>
+          <li>Roommate groups (3BR/1,000 sqft is too cramped for unrelated adults)</li>
+          <li>Transit-dependent applicants (Walk Score 12)</li>
+          <li>School-motivated families — Oak Grove High (5/10) will disappoint them</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.75rem;color:var(--navy);">Positioning Pillars</h3>
+    <div class="pillars-grid" style="margin-bottom:1rem;">
+      <div class="pillar"><div class="pillar-num">1</div><div class="pillar-text">Brand-new construction — never been lived in</div></div>
+      <div class="pillar"><div class="pillar-num">2</div><div class="pillar-text">Private standalone home — separate structure, private entrance &amp; patio/yard</div></div>
+      <div class="pillar"><div class="pillar-num">3</div><div class="pillar-text">Pets welcome — cats and dogs OK, rare for new construction</div></div>
+      <div class="pillar"><div class="pillar-num">4</div><div class="pillar-text">Washer/dryer included (if confirmed) — significant advantage</div></div>
+      <div class="pillar"><div class="pillar-num">5</div><div class="pillar-text">Large private patio — outdoor space premium in SJ rentals</div></div>
+      <div class="pillar"><div class="pillar-num">6</div><div class="pillar-text">Cul-de-sac location — low traffic, quiet, residential feel</div></div>
+    </div>
+
+    <div class="card">
+      <p style="font-weight:600;margin-bottom:0.4rem;">Where to reach qualified tenants:</p>
+      <p>Facebook Marketplace, Apartments.com, WeChat community groups, Nextdoor, Craigslist.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 8: LISTING STRATEGY -->
+  <section id="s8" class="section">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <h2 class="section-title">Listing Strategy</h2>
+    </div>
+
+    <div class="alert orange">
+      <span class="alert-icon">🚨</span>
+      <div><strong>Fix the Parking Error Today — Before Anything Else</strong>The description says "No garage street parking only." The Zillow facts say "Off Street Parking." If an off-street spot exists: update description to say "1 dedicated off-street parking spot." If truly street parking only: update the Zillow facts field to remove "Off Street Parking."</div>
+    </div>
+
+    <div class="card" style="margin-bottom:1.25rem;">
+      <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:0.6rem;color:var(--navy);">Clarify Washer/Dryer</h3>
+      <ul class="styled-list">
+        <li>If washer and dryer are included: update Zillow facts to reflect this</li>
+        <li>If only hookups: remove "washer and dryer" from description, replace with "in-unit washer/dryer hookups"</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-bottom:1.25rem;">
+      <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:0.6rem;color:var(--navy);">New Headline</h3>
+      <div style="background:var(--navy);color:var(--amber);font-family:'JetBrains Mono',monospace;font-size:0.85rem;padding:0.85rem 1rem;border-radius:8px;">Brand-New 3BD/2BA Standalone Home | Private Patio &amp; Yard | Pets OK | Washer/Dryer Incl | San Jose 95138</div>
+    </div>
+
+    <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.75rem;color:var(--navy);">Description: Old vs. New</h3>
+
+    <div class="card">
+      <div class="desc-tabs">
+        <button class="desc-tab red-tab active" onclick="switchDesc('old',this)">Current (Problems)</button>
+        <button class="desc-tab" onclick="switchDesc('new',this)">New (Copy-Paste Ready)</button>
+      </div>
+
+      <div id="desc-old" class="desc-panel active">
+        <div class="old-desc">Brand new built ADU / 3 beds and 2 baths with 1,000 sf of living area / Single level located in a cul-de-sac / Laminate floor throughout / LED ceiling lights / Large concrete patio with a private yard / Central heat only / New refrigerator, washer and dryer / Conveniently locate to work and shopping / No garage street parking only</div>
+        <ul class="problem-list" style="margin-top:0.85rem;">
+          <li>Leads with "ADU" — triggers shared-wall anxiety before any benefit is communicated</li>
+          <li>Parking contradiction destroys trust with applicants who read both sections</li>
+          <li>No mention of standalone structure, private entrance, or separation from main house</li>
+          <li>"Conveniently locate" — grammatical error signals low-effort landlord</li>
+          <li>Washer/dryer vs. WD hookup ambiguity — applicants assume the worse</li>
+          <li>No utilities disclosure in headline copy</li>
+          <li>Zero urgency or call to action</li>
+        </ul>
+      </div>
+
+      <div id="desc-new" class="desc-panel">
+        <div class="new-desc-wrap">
+          <button class="copy-btn" id="copy-btn" onclick="copyDesc()">Copy</button>
+          <pre class="new-desc" id="new-desc-text">Brand-new 2026 construction — never been lived in.
+
+This is a standalone, single-level home with its own private entrance — NOT a basement, NOT a converted garage, NOT sharing walls with any other unit. Complete privacy.
+
+WHAT'S INCLUDED:
+- 3 bedrooms / 2 full bathrooms | ~1,000 sqft
+- New refrigerator, washer &amp; dryer [CONFIRM and update if hookups only]
+- Full kitchen with dishwasher and microwave
+- Large concrete patio with private yard — outdoor space that's yours alone
+- [1 dedicated off-street parking spot / Street parking — UPDATE to match reality]
+- LED ceiling lights throughout, laminate floors
+- Central heating [no A/C — note below]
+
+HONEST NOTES:
+- No air conditioning (central heat only). The unit stays comfortable with fans in summer; a portable A/C unit can be added by tenant.
+- Tenants pay all utilities (electric, gas, water, trash)
+- Street address is #2, which is the standalone rear unit — your own private space
+
+PETS: Cats and dogs welcome (additional deposit required)
+
+LEASE TERMS:
+- Rent: $3,400/mo | Security deposit: $3,400
+- 12-month lease | Available immediately
+- No smoking
+
+QUALIFICATIONS:
+- Combined gross income: $10,200+/mo (3x rent)
+- Credit 670+ preferred, full profile considered
+- No prior evictions
+
+TO SCHEDULE A SHOWING: Reply with: (1) your target move-in date, (2) household size, (3) confirmation that household income exceeds $10,200/mo. We respond within a few hours and show 7 days a week.</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:0.75rem;color:var(--navy);">Recommended Photo Order</h3>
+      <ol style="padding-left:1.2rem;font-size:0.875rem;color:#374151;">
+        <li style="margin-bottom:0.3rem;">Exterior of the standalone unit (shows private entrance, separation from main house)</li>
+        <li style="margin-bottom:0.3rem;">Patio/yard (outdoor space — differentiated feature)</li>
+        <li style="margin-bottom:0.3rem;">Living area (staged, wide-angle, daytime light)</li>
+        <li style="margin-bottom:0.3rem;">Kitchen (appliances visible)</li>
+        <li style="margin-bottom:0.3rem;">Primary bedroom (staged with bed minimum)</li>
+        <li style="margin-bottom:0.3rem;">Primary bath</li>
+        <li style="margin-bottom:0.3rem;">Secondary bedrooms</li>
+        <li style="margin-bottom:0.3rem;">Laundry appliances or hookup area</li>
+        <li>Parking spot</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SECTION 9: EXECUTION PLAN -->
+  <section id="s9" class="section">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <h2 class="section-title">Execution Plan</h2>
+    </div>
+    <p style="margin-bottom:1.25rem;">Click the dot next to each step to mark it complete.</p>
+    <div class="timeline" id="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot" onclick="toggleDot(this)" title="Mark complete"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-day">Today</span>
+          <div class="timeline-action">Fix parking contradiction. Clarify washer/dryer. Consult attorney re AB 1482.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot" onclick="toggleDot(this)" title="Mark complete"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 1–2</span>
+          <div class="timeline-action">Stage primary bedroom. Shoot new exterior photo, yard/patio, parking. Upload photos. Rewrite description.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot" onclick="toggleDot(this)" title="Mark complete"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 2–3</span>
+          <div class="timeline-action">Drop price to $3,400. Relist on Apartments.com, Facebook Marketplace, Nextdoor, Craigslist simultaneously.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot" onclick="toggleDot(this)" title="Mark complete"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 3–7</span>
+          <div class="timeline-action">Pre-screen all inquiries. Group showings Tue/Thu 6–7pm + Sat 10am–12pm. T-24 + T-2 confirmation texts. 4-hour response commitment.</div>
+          <span class="timeline-gate">Gate: End of Day 7 — fewer than 5 qualified inquiries → cut to $3,250</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot" onclick="toggleDot(this)" title="Mark complete"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 7–14</span>
+          <div class="timeline-action">Continue group showings. Post-showing follow-up text within 30 min. Refresh Craigslist every 2 days.</div>
+          <span class="timeline-gate">Gate: End of Day 14 — no signed application → cut to $3,200 OR 1 month free (not both)</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot" onclick="toggleDot(this)" title="Mark complete"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 14–21</span>
+          <div class="timeline-action">Hold. Consider adding portable A/C as included amenity. Consider professional photography.</div>
+          <span class="timeline-gate">Gate: End of Day 21 — no lease → engage property manager</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot" onclick="toggleDot(this)" title="Mark complete"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 21–28</span>
+          <div class="timeline-action">Evaluate furnished rental pivot at $4,500–$5,500/mo.</div>
+          <span class="timeline-gate">Gate: End of Day 28 — unleased → furnished pivot</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 10: RISK & LEGAL -->
+  <section id="s10" class="section">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <h2 class="section-title">Risk and Legal Flags</h2>
+    </div>
+
+    <div class="alert red">
+      <span class="alert-icon">⚖</span>
+      <div><strong>CRITICAL: AB 1482 Compliance — Consult Attorney Before Signing Any Lease</strong>Failure to serve the written exemption notice on your ADU creates a $10,000+ liability risk. The main house on the same lot now loses its single-family AB 1482 exemption. Do not sign without legal review.</div>
+    </div>
+
+    <div class="legal-card">
+      <h4>AB 1482 — What You Need to Know</h4>
+      <ul>
+        <li><strong>This ADU:</strong> Exempt from AB 1482 rent cap for 15 years (new construction through ~2041). Written exemption notice must be in the lease packet.</li>
+        <li><strong>Main house on same lot:</strong> LOSES its single-family AB 1482 exemption once an ADU is added. Now subject to rent cap (CPI + 5%, max 10%; currently ~8.8% through July 31, 2026) and just-cause eviction rules.</li>
+        <li><strong>Failure to serve exemption notice:</strong> $10,000+ liability risk.</li>
+        <li><strong>Action:</strong> Consult a California landlord-tenant attorney before signing any lease.</li>
+      </ul>
+    </div>
+
+    <div class="legal-card" style="border-color:#fed7aa;background:#fff7ed;">
+      <h4 style="color:var(--orange);">Price History Damage</h4>
+      <p style="font-size:0.875rem;color:#374151;">The public Zillow price history ($3,800 → $3,700 → $3,800) is visible to all prospects. Cut to $3,400 and hold firmly — further yo-yoing compounds the damage significantly.</p>
+    </div>
+
+    <div class="legal-card" style="border-color:#fde68a;background:#fffbeb;">
+      <h4 style="color:var(--amber-dark);">Macro Risks</h4>
+      <ul style="font-size:0.875rem;color:#374151;">
+        <li>457 WARN notices in Santa Clara County, 26,107 workers affected in 24 months</li>
+        <li>bioMérieux (121 jobs, April 2026), Zebra Technologies (75 jobs, Feb–Mar 2026)</li>
+        <li>Target income tier ($122K+/yr) is layoff-exposed — require employer verification</li>
+      </ul>
+    </div>
+
+    <div class="legal-card" style="border-color:#fca5a5;background:var(--red-light);">
+      <h4>Bear Case (Holding at $3,800)</h4>
+      <ul>
+        <li>34 days already burned; each additional week = $887 in lost rent</li>
+        <li>If unleased by end of June: cumulative vacancy cost exceeds $10,000</li>
+        <li>Risk of marginal tenant placement under duress in fall (weakest leasing season)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 11: FINANCIAL SUMMARY -->
+  <section id="s11" class="section">
+    <div class="section-header">
+      <div class="section-number">11</div>
+      <h2 class="section-title">Financial Summary</h2>
+    </div>
+    <div class="table-wrap fin-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Monthly Rent</th>
+            <th>Est. Weeks to Lease</th>
+            <th>Lost Rent (to date + future)</th>
+            <th>Year 1 Net</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hold at $3,800 (status quo)</td>
+            <td>$3,800</td>
+            <td>+6–8 more</td>
+            <td>$4,317 + $5,320 = $9,637</td>
+            <td><strong style="color:var(--red);">~$19,000</strong></td>
+          </tr>
+          <tr>
+            <td>Cut to $3,600</td>
+            <td>$3,600</td>
+            <td>+3–4</td>
+            <td>$4,317 + $2,657 = $6,974</td>
+            <td><strong style="color:var(--amber-dark);">~$35,200</strong></td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Cut to $3,400 (recommended)</td>
+            <td>$3,400</td>
+            <td>+1–2</td>
+            <td>$4,317 + $887 = $5,204</td>
+            <td><strong style="color:var(--green);">~$39,100</strong></td>
+          </tr>
+          <tr>
+            <td>Cut to $3,200</td>
+            <td>$3,200</td>
+            <td>+0.5–1</td>
+            <td>$4,317 + $443 = $4,760</td>
+            <td><strong style="color:var(--blue);">$33,640</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fin-note">
+      <p><strong>Already lost:</strong> 34 days × $127/day = $4,317</p>
+      <p><strong>Opportunity cost per additional week at $3,800:</strong> $887</p>
+      <p><strong>Breakeven on the $400 cut:</strong> Recovered if it accelerates lease-up by 5.4 weeks — near-certain at current pace</p>
+      <p><strong>Year 1 delta (cut now vs. hold):</strong> approximately +$19,600 more in net income</p>
+    </div>
+  </section>
+
+  <!-- SECTION 12: FINAL RECOMMENDATION -->
+  <section id="s12" class="section">
+    <div class="section-header">
+      <div class="section-number">12</div>
+      <h2 class="section-title">Final Recommendation</h2>
+    </div>
+    <div class="rec-cards">
+      <div class="rec-card urgent">
+        <span class="rec-step">TODAY</span>
+        <span><strong>Fix the parking contradiction.</strong> Confirm off-street spot or not. Update both fields to match.</span>
+      </div>
+      <div class="rec-card urgent">
+        <span class="rec-step">TODAY</span>
+        <span><strong>Call a California landlord-tenant attorney about AB 1482.</strong> Do not sign a lease without the exemption notice.</span>
+      </div>
+      <div class="rec-card important">
+        <span class="rec-step">BY DAY 3</span>
+        <span><strong>Drop to $3,400 and relaunch.</strong> Single decisive cut. Update all platforms simultaneously with new description and photos.</span>
+      </div>
+      <div class="rec-card important">
+        <span class="rec-step">BY DAY 3</span>
+        <span><strong>New photos.</strong> Exterior (standalone structure), patio/yard, staged primary bedroom — minimum three new shots.</span>
+      </div>
+      <div class="rec-card">
+        <span class="rec-step">DAY 3+</span>
+        <span><strong>Pre-screen before every showing.</strong> 3 questions before booking. T-24 and T-2 confirmation texts.</span>
+      </div>
+      <div class="rec-card">
+        <span class="rec-step">DAY 14</span>
+        <span><strong>If no signed application:</strong> single cut to $3,200 or 1 month free. Not both. No further price increases.</span>
+      </div>
+    </div>
+    <div class="bottom-line">
+      <strong>Bottom line:</strong> You have 67 people who were interested enough to contact you and zero leases. <strong>Cut to $3,400, fix the listing, handle AB 1482</strong> — and this unit leases. Hold at $3,800 and you burn another $5,000+ in lost rent before eventually conceding the same price cut under worse conditions.
+    </div>
+  </section>
+
+</div>
+
+<script>
+// ===== ACTIVE NAV =====
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('#top-nav a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const id = entry.target.id;
+      const link = document.querySelector(`#top-nav a[href="#${id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+sections.forEach(s => observer.observe(s));
+
+// ===== PRICING SCENARIOS =====
+const scenarios = [
+  {
+    label: 'Hold $3,800 — Status Quo',
+    rent: '$3,800',
+    days: '45–60+ more days',
+    net: '$19,000',
+    lost: '$9,637',
+    rentColor: 'var(--red)',
+    netColor: 'var(--red)',
+    note: 'Every additional week at $3,800 burns $887 in lost rent. The listing is stale, the price is damaged, and peak season is closing. Holding is the most expensive choice.',
+    bars: [100, 0, 0, 0]
+  },
+  {
+    label: 'Cut to $3,600',
+    rent: '$3,600',
+    days: '~21–28 days',
+    net: '$35,200',
+    lost: '$6,974',
+    rentColor: 'var(--amber-dark)',
+    netColor: 'var(--amber-dark)',
+    note: 'A meaningful cut but $3,600 may not be decisive enough after the price yo-yo. The listing stigma requires a more credible signal. Still significantly better than holding.',
+    bars: [0, 100, 0, 0]
+  },
+  {
+    label: 'Cut to $3,400 — Recommended',
+    rent: '$3,400',
+    days: '~10–14 days',
+    net: '$39,100',
+    lost: '$5,204',
+    rentColor: 'var(--green)',
+    netColor: 'var(--green)',
+    note: 'The optimal scenario. $3,400 is a decisive, credible signal that counters the price yo-yo stigma. Brings $/sqft to $3.40 — still at the top of the comp range but defensible. Breakeven on the $400 cut is just 5.4 weeks — near-certain at current pace.',
+    bars: [0, 0, 100, 0]
+  },
+  {
+    label: 'Cut to $3,200 — Aggressive',
+    rent: '$3,200',
+    days: '~5–7 days',
+    net: '$33,640',
+    lost: '$4,760',
+    rentColor: 'var(--blue)',
+    netColor: 'var(--blue)',
+    note: 'Fastest to lease but leaves ~$5,500 on the table vs. the $3,400 scenario. The unit has genuine advantages (brand-new, patio, pets OK, washer/dryer) that justify $3,400 over $3,200. Reserve this for the Day 14 gate if needed.',
+    bars: [0, 0, 0, 100]
+  }
+];
+
+const barMaxValues = [39100, 39100, 39100, 39100];
+const barNetValues = [19000, 35200, 39100, 33640];
+const barColors = ['var(--red)', 'var(--amber)', 'var(--green)', 'var(--blue)'];
+
+let activeScenario = 2;
+
+function selectScenario(idx) {
+  activeScenario = idx;
+  const s = scenarios[idx];
+  document.getElementById('scenario-headline').textContent = s.label;
+  document.getElementById('sc-rent').textContent = s.rent;
+  document.getElementById('sc-rent').style.color = s.rentColor;
+  document.getElementById('sc-days').textContent = s.days;
+  document.getElementById('sc-net').textContent = s.net;
+  document.getElementById('sc-net').style.color = s.netColor;
+  document.getElementById('sc-lost').textContent = s.lost;
+  document.getElementById('scenario-note').textContent = s.note;
+
+  document.querySelectorAll('.pricing-tab').forEach((btn, i) => {
+    btn.classList.remove('active', 'red-tab', 'green-tab');
+    if (i === idx) {
+      btn.classList.add('active');
+      if (idx === 0) btn.classList.add('red-tab');
+      if (idx === 2) btn.classList.add('green-tab');
+    } else {
+      if (i === 0) btn.classList.add('red-tab');
+    }
+  });
+
+  // Update bars
+  const maxNet = Math.max(...barNetValues);
+  barNetValues.forEach((val, i) => {
+    const bar = document.getElementById('bar-' + i);
+    const pct = Math.round((val / maxNet) * 100);
+    bar.style.width = pct + '%';
+    bar.style.background = barColors[i];
+    bar.classList.toggle('active-bar', i === idx);
+  });
+}
+
+// Init scenario display
+selectScenario(2);
+
+// ===== ROOT CAUSE EXPAND =====
+function toggleCause(card) {
+  card.classList.toggle('open');
+}
+
+// ===== DESCRIPTION TABS =====
+function switchDesc(which, btn) {
+  document.querySelectorAll('.desc-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.desc-tab').forEach(t => { t.classList.remove('active', 'red-tab'); });
+  document.getElementById('desc-' + which).classList.add('active');
+  btn.classList.add('active');
+  if (which === 'old') btn.classList.add('red-tab');
+}
+
+// ===== COPY DESCRIPTION =====
+function copyDesc() {
+  const text = document.getElementById('new-desc-text').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  });
+}
+
+// ===== TIMELINE CHECKLIST =====
+function toggleDot(dot) {
+  dot.classList.toggle('checked');
+  if (dot.classList.contains('checked')) {
+    dot.setAttribute('title', 'Completed');
+    dot.closest('.timeline-content') && (dot.closest('.timeline-item').querySelector('.timeline-action').style.textDecoration = 'line-through');
+    dot.closest('.timeline-item').querySelector('.timeline-action').style.color = 'var(--slate)';
+  } else {
+    dot.setAttribute('title', 'Mark complete');
+    dot.closest('.timeline-item').querySelector('.timeline-action').style.textDecoration = '';
+    dot.closest('.timeline-item').querySelector('.timeline-action').style.color = '';
+  }
+}
+
+// ===== COMPS TABLE SORT =====
+(function() {
+  const table = document.getElementById('comps-table');
+  const headers = table.querySelectorAll('thead th');
+  let sortCol = -1, sortDir = 1;
+
+  // Store original rows
+  const tbody = document.getElementById('comps-body');
+  const origRows = Array.from(tbody.querySelectorAll('tr'));
+
+  headers.forEach((th, colIdx) => {
+    th.addEventListener('click', () => {
+      if (sortCol === colIdx) {
+        sortDir *= -1;
+      } else {
+        sortCol = colIdx;
+        sortDir = 1;
+      }
+      headers.forEach(h => { h.classList.remove('sort-asc','sort-desc'); });
+      th.classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
+
+      const isNum = th.dataset.type === 'num';
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort((a, b) => {
+        let av = a.cells[colIdx] ? a.cells[colIdx].textContent.replace(/[$,~]/g,'').trim() : '';
+        let bv = b.cells[colIdx] ? b.cells[colIdx].textContent.replace(/[$,~]/g,'').trim() : '';
+        if (isNum) {
+          av = parseFloat(av) || 0;
+          bv = parseFloat(bv) || 0;
+          return (av - bv) * sortDir;
+        }
+        return av.localeCompare(bv) * sortDir;
+      });
+      rows.forEach(r => tbody.appendChild(r));
+    });
+  });
+})();
+</script>
+</body>
+</html>
